@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+  <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+
+   <listener>
+   		<listener-class>databox.task.listener.InitGlobalParamListener</listener-class>
+   </listener>
+  	<listener>
+		<listener-class>databox.task.listener.TaskMessageReceiver</listener-class>
+	</listener>
+   
+   
+  <servlet>
+    <servlet-name>CheckStatusServlet</servlet-name>
+    <servlet-class>databox.task.servlet.CheckStatusServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetResultServlet</servlet-name>
+    <servlet-class>databox.task.servlet.GetResultServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListTaskServlet</servlet-name>
+    <servlet-class>databox.task.servlet.ListTaskServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UploadServlet</servlet-name>
+  	<servlet-class>databox.task.servlet.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExecuteServlet</servlet-name>
+  	<servlet-class>databox.task.servlet.ExecuteServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>ExecuteServlet</servlet-name>
+    <url-pattern>/ExecuteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckStatusServlet</servlet-name>
+    <url-pattern>/CheckStatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetResultServlet</servlet-name>
+    <url-pattern>/GetResultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListTaskServlet</servlet-name>
+    <url-pattern>/ListTaskServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

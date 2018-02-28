@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>databox</groupId>
+    <artifactId>databox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+
+
+    <modules>
+        <module>databox-commons</module>
+        <module>databox-exec</module>
+        <module>databox-service</module>
+        <module>databox-sample-service</module>
+        <module>databox-sample</module>
+    </modules>
+
+</project>

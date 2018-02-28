@@ -1,0 +1,56 @@
+[
+	{
+		"name" : "甲状腺病历数据集",
+		"description" : "甲状腺病历",
+		"table" : [
+			{
+				"name" : "MedicalRecord", 
+				"localname" : "病历",
+				"description" : "病历信息",
+				"pk" : ["medical_record_id"],
+				"fk" : ["doctor_id", "patient_id"],
+				"field" : [
+					{"name" : "medical_record_id", "localname" : "病历号", "type" : "varchar"},
+					{"name" : "doctor_id", "localname" : "就诊医生工号", "type" : "varchar"},
+					{"name" : "patient_id", "localname" : "就诊病人病号", "type" : "varchar"},
+					{"name" : "symptom", "localname" : "病情描述", "type" : "varchar"},
+					{"name" : "diagnose", "localname" : "诊断结论", "type" : "varchar"}
+				]
+			},
+			{
+				"name" : "test", 
+				"localname" : "测试",
+				"description" : "病历信息",
+				"pk" : ["name"],
+				"fk" : ["doctor_id", "patient_id"],
+				"field" : [
+					{"name" : "name", "localname" : "病历号", "type" : "varchar"},
+					{"name" : "sex", "localname" : "就诊医生工号", "type" : "varchar"},
+					{"name" : "age", "localname" : "就诊病人病号", "type" : "varchar"},
+					{"name" : "symptom", "localname" : "病情描述", "type" : "varchar"},
+					{"name" : "diagnose", "localname" : "诊断结论", "type" : "varchar"}
+				]
+			}
+		]
+	},
+	{
+		"name" : "xxxx数据集",
+		"description" : "xxxx",
+		"table" : [
+			{
+				"name" : "MedicalRecord", 
+				"localname" : "病历",
+				"description" : "病历信息",
+				"pk" : ["medical_record_id"],
+				"fk" : ["doctor_id", "patient_id"],
+				"field" : [
+					{"name" : "medical_record_id", "localname" : "病历号", "type" : "varchar"},
+					{"name" : "doctor_id", "localname" : "就诊医生工号", "type" : "varchar"},
+					{"name" : "patient_id", "localname" : "就诊病人病号", "type" : "varchar"},
+					{"name" : "symptom", "localname" : "病情描述", "type" : "varchar"},
+					{"name" : "diagnose", "localname" : "诊断结论", "type" : "varchar"}
+				]
+			}
+		]
+	}
+]

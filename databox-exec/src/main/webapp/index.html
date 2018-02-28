@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>容器数据盒</title>
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="expires" content="0"/>    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+	<meta http-equiv="description" content="This is my page"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="./layui/css/layui.css"/>
+<!-- 	<script type='text/javascript' charset="UTF-8" src='./js/jquery-3.2.1.min.js'></script>
+ -->	
+ 	<script type='text/javascript' charset="UTF-8" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ 	<script src="./layui/layui.all.js"></script>
+<!--
+	<script>
+	  	var layer = layui.layer;
+	</script>
+-->
+	<script type='text/javascript' charset="UTF-8" src='./js/main.js'></script>
+  </head>
+  
+  <body>
+    <div class="title_section  ">
+    	<div class="title_body">
+		  	<div class="logo"> 
+		  		<div>
+		  			<img class="brand-simple" width=200 height=200 src="./imgs/brand.svg" alt="Docker" title="Docker">
+		  			<p>容器数据盒 </p>
+		  		</div> 
+			</div>
+		</div>
+	</div>
+	  <div class="upload_section">
+	  	<div class="upload_title"><span class="upload_title" id="test_output">计算任务</span></div>
+	  	<div class="upload_list">
+	  		<table>
+	  			<thead>
+	  				<tr>
+	  					<td colspan="4">
+	  						<form method="post" enctype="multipart/form-data" action="UploadServlet">
+	  							<input type="file" name="upload"/>
+	  							<input type="submit" value="上传"/>
+	  						</form>	
+	  					</td>
+	  				</tr>
+	  				<tr>
+	  					<td style="font-size:20px">任务组</td>
+						<td style="font-size:20px">名称</td>
+						<td style="font-size:20px">状态</td>
+						<td style="font-size:20px">操作</td>
+					</tr>
+					
+	  			</thead>
+	  			<tbody id="tasklist_content">	
+	  			</tbody>
+	  		</table>
+	  		
+	  	</div>
+	  </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=mongo-java-driver-3.7.0-CUSTOM.jar -DgroupId=org.mongodb -DartifactId=mongodb-driver -Dversion=3.7.0-CUSTOM -Dpackaging=jar

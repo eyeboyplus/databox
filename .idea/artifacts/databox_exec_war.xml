@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="databox-exec:war">
+    <output-path>$PROJECT_DIR$/databox-exec/target</output-path>
+    <root id="archive" name="databox-exec.war">
+      <element id="artifact" artifact-name="databox-exec:war exploded" />
+    </root>
+  </artifact>
+</component>

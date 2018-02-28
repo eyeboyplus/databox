@@ -1,0 +1,1 @@
+修改mongo-java-driver源码部分Bson对象实现Serializable接口

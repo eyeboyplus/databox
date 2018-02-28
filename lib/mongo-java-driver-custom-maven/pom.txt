@@ -1,0 +1,5 @@
+<dependency>
+	<groupId>org.mongodb</groupId>
+    <artifactId>mongodb-driver</artifactId>
+    <version>3.7.0-CUSTOM</version>
+</dependency>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mongodb:mongodb-driver:3.7.0-CUSTOM">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver/3.7.0-CUSTOM/mongodb-driver-3.7.0-CUSTOM.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver/3.7.0-CUSTOM/mongodb-driver-3.7.0-CUSTOM-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver/3.7.0-CUSTOM/mongodb-driver-3.7.0-CUSTOM-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
