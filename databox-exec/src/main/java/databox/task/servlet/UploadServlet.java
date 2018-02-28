@@ -35,7 +35,6 @@ public class UploadServlet extends HttpServlet {
      */
     public UploadServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
     protected boolean downloadFile(HttpServletRequest request, String tmpDir, String desDir) {

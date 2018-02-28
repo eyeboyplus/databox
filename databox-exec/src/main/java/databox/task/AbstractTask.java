@@ -75,7 +75,6 @@ public abstract class AbstractTask {
 			try {
 				System.out.println(reader.readLine());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
