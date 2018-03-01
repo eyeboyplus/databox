@@ -6,19 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="databox-case" />
         <module name="databox-exec" />
         <module name="databox-sample" />
         <module name="databox-sample-service" />
         <module name="databox-service" />
+        <module name="databox-service-dev" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="databox" target="1.5" />
-      <module name="databox-commons" target="1.5" />
-      <module name="databox-exec" target="1.5" />
-      <module name="databox-sample" target="1.5" />
-      <module name="databox-sample-service" target="1.5" />
-      <module name="databox-service" target="1.5" />
+      <module name="databox-case" target="1.8" />
+      <module name="databox-commons" target="1.8" />
+      <module name="databox-exec" target="1.8" />
+      <module name="databox-sample" target="1.8" />
+      <module name="databox-service" target="1.8" />
+      <module name="databox-service-dev" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

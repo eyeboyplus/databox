@@ -155,7 +155,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 				fkValues.add(new Variant(val).toString());
 			}
 		}
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList);
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		return new RecordedData(log, res / count);
 	}
 	
@@ -174,7 +174,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 			cursor.next();
 			count ++;
 		}
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList); 
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		return new RecordedData(log, count);
 	}
 	
@@ -236,7 +236,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 			fieldNames = getFields(res.get(0));
 				
 		
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList);
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		return new RecordedData(log, res);
 	}
 	
@@ -318,7 +318,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 			}
 		}
 		
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList);
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		return new RecordedData(log, res);
 	}
 	
@@ -358,7 +358,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 		List<String> fieldNames = new ArrayList<String>();
 		List<String> relDataList = new ArrayList<String>();
 		Map<String, List<String>> fkList = new HashMap<String, List<String>>();
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList);
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		
 		if(tmp.isEmpty())
 			return new RecordedData(log, new Variant(null));
@@ -439,7 +439,7 @@ public class DataBoxMongoDB implements IDataBoxDatabase {
 		}
 		
 		
-		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList);
+		Log log = new Log(serviceName, collectionName, fieldNames, relDataList, fkList, filter.toString());
 		
 		return new RecordedData(log, data);
 	}

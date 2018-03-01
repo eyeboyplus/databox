@@ -1,5 +1,9 @@
 package databox.control;
 
+import javax.xml.bind.DatatypeConverter;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 import java.text.SimpleDateFormat;
@@ -14,8 +18,11 @@ public class Log {
 	private Map<String, List<String>> fkList;
 	
 	private String createdTime;
-	
-	public Log(
+	private String filterInfo;
+
+	private String appId;
+
+	public Log (
 			final String serviceName,
 			final String collectionName, 
 			final List<String> fieldNames,
@@ -31,8 +38,27 @@ public class Log {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		this.createdTime = sdf.format(new Date());		
 	}
+
+	public Log (
+			final String serviceName,
+			final String collectionName,
+			final List<String> fieldNames,
+			final List<String> relDataList,
+			final Map<String, List<String>> fkList,
+			final String filterInfo) {
+		this.serviceName = serviceName;
+
+		this.relCol = collectionName;
+		this.relFields = fieldNames;
+		this.relDataList = relDataList;
+		this.fkList = fkList;
+		this.filterInfo = filterInfo;
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+		this.createdTime = sdf.format(new Date());
+	}
 	
-	public Log(
+	public Log (
 			final String serviceName,
 			final String collectionName, 
 			final List<String> fieldNames,
@@ -96,5 +122,40 @@ public class Log {
 
 	public void setCreatedTime(String createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public String toUID() {
+		String input = this.serviceName + this.relCol + this.relFields.toString();
+		if(this.filterInfo.isEmpty())
+			input += this.filterInfo;
+
+		String res = "";
+		try {
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			byte[] output = md.digest(input.getBytes("UTF-8"));
+			res = DatatypeConverter.printHexBinary(output);
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		return res;
+	}
+
+	public String getFilterInfo() {
+		return filterInfo;
+	}
+
+	public void setFilterInfo(String filterInfo) {
+		this.filterInfo = filterInfo;
+	}
+
+	public String getAppId() {
+		return appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
 	}
 }

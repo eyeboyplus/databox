@@ -34,8 +34,9 @@ public class DataBoxService implements IDataBoxService {
 	private LogAnalysis logAnalysis = null;
 	
 	public DataBoxService() {
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox/service/databox-service.properties");
-		Properties properties = PropertiesFactory.getProperties(in);
+//		InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox-service.properties");
+        InputStream in = DataBoxService.class.getClassLoader().getResourceAsStream("databox-service.properties");
+        Properties properties = PropertiesFactory.getProperties(in);
 		String ip = properties.getProperty(DataBox.KEY_DATA_DB_IP, DataBox.DEFAULT_DATA_DB_IP);
 		int port = Integer.valueOf(properties.getProperty(DataBox.KEY_DATA_DB_PORT, DataBox.DEFAULT_DATA_DB_PORT));
 		String dbName = properties.getProperty(DataBox.KEY_DATA_DB_DEFAULT_DB_NAME, DataBox.DEFAULT_DATA_DB_NAME);
@@ -46,14 +47,15 @@ public class DataBoxService implements IDataBoxService {
 		Map<String, List<String>> fkMap = null;
 		//DBStruct dbStruct = new DBStruct(dataSetInfoFileName);
 		//pkMap = dbStruct.getPKMap();
-		//! 需要修改，从配置文件加载
+		//TODO 需要修改，从配置文件加载
 		pkMap = new HashMap<String, String>();
 		pkMap.put("diagnosis", "TSH");
 		fkMap = new HashMap<String, List<String>>();
 		List<String> fk = new ArrayList<String>();
 		fk.add("FT3");
 		fkMap.put("diagnosis", fk);
-		
+
+		// TODO 导出配置文件
 		String logAnalysisIp = "127.0.0.1";
 		int logAnalysisPort = 5000;
 		logAnalysis = new LogAnalysis(logAnalysisIp, logAnalysisPort);

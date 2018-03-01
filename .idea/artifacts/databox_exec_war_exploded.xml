@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="databox-exec:war exploded">
-    <output-path>$PROJECT_DIR$/databox-exec/target/databox-exec</output-path>
+    <output-path>$PROJECT_DIR$/databox-exec/target/databox-exec-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -16,7 +16,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/databox-exec/target/databox-exec/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/databox-exec/target/databox-exec-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="databox-exec/web/Web" />
     </root>

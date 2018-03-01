@@ -112,7 +112,6 @@ public class UploadServlet extends HttpServlet {
 			//serverXmlParser = new TaskListXmlParser(taskDir + "/tasklist.xml");
 			serverXmlParser = (TaskListXmlParser) this.getServletContext().getAttribute("tasklist");
 		} catch (DocumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			response.sendRedirect("index.html?status=1");
 			//out.println("{status: 1, error: 'can't find tasklist.xml file'}");
@@ -202,7 +201,6 @@ public class UploadServlet extends HttpServlet {
 		/*try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
 		response.sendRedirect("index.html?status=0");
@@ -212,7 +210,6 @@ public class UploadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

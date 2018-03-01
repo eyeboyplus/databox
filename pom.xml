@@ -10,14 +10,13 @@
 
     <packaging>pom</packaging>
 
-
-
     <modules>
         <module>databox-commons</module>
         <module>databox-exec</module>
         <module>databox-service</module>
-        <module>databox-sample-service</module>
+        <module>databox-service-dev</module>
         <module>databox-sample</module>
+        <module>databox-case</module>
     </modules>
 
 </project>
