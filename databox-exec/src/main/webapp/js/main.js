@@ -167,11 +167,11 @@ function listAllTask() {
 	
 	$.getJSON("ListTaskServlet", function(data, status, xhr){
 		$.each(data, function(i, field) {
-			var trTask = $("<tr></tr>").attr("id", field.taskGroupName + "_" + field.taskName);
+			var trTask = $("<tr></tr>").attr("id", field.groupName + "_" + field.taskName);
 			var tdTaskName = $("<td></td>").attr("style", "font-size:20px").text(field.taskName);
-			var tdTaskGroupName = $("<td></td>").attr("style", "font-size:20px").text(field.taskGroupName);
+			var tdTaskGroupName = $("<td></td>").attr("style", "font-size:20px").text(field.groupName);
 			var tdStatus = $("<td></td>").attr("style", "font-size:20px").text("stop");
-			var tdOperation = $("<td></td>").attr("style", "font-size:20px").html("<a href='javascript:void(0)' onclick='executeTask(\"" + field.taskGroupName + "\", \"" + field.taskName + "\")'>运行</a>  <a href='javascript:void(0)' onclick='getTaskResult(\"" + field.taskGroupName + "\", \"" + field.taskName + "\")'>结果</a>");
+			var tdOperation = $("<td></td>").attr("style", "font-size:20px").html("<a href='javascript:void(0)' onclick='executeTask(\"" + field.groupName + "\", \"" + field.taskName + "\")'>运行</a>  <a href='javascript:void(0)' onclick='getTaskResult(\"" + field.groupName + "\", \"" + field.taskName + "\")'>结果</a>");
 			trTask.append(tdTaskGroupName, tdTaskName, tdStatus, tdOperation);
 			$("#tasklist_content").append(trTask);
 		});

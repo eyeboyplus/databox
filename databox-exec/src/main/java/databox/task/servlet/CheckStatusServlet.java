@@ -69,7 +69,7 @@ public class CheckStatusServlet extends HttpServlet {
 					boolean isAlive = task.isAlive();
 					JsonObject obj = new JsonObject();
 					TaskInfo info = task.getTaskInfo();
-					obj.addProperty("taskGroupName", info.getTaskGroupName());
+					obj.addProperty("taskGroupName", info.getGroupName());
 					obj.addProperty("taskName", info.getTaskName());
 					obj.addProperty("status", isAlive ? "running":"stop");
 					res.add(obj);

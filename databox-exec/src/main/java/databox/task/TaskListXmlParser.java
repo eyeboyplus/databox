@@ -3,6 +3,7 @@ package databox.task;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,12 +21,38 @@ public class TaskListXmlParser {
 		SAXReader reader = new SAXReader();
 		doc = reader.read(new File(fileName));
 	}
+
+	public TaskListXmlParser(InputStream in) throws DocumentException {
+	    SAXReader reader = new SAXReader();
+	    doc = reader.read(in);
+    }
 	
 	// test
 	public Element getRootElement() {
 		return doc.getRootElement();
 	}
-	
+
+
+	public AbstractTask.TaskLang getTaskLang() {
+	    Element root = doc.getRootElement();
+        String value = root.attributeValue("lang");
+        if(value == null) {
+            System.err.println("cann't parse tasklist.xml because cann't find the 'lang' attribute.");
+            return AbstractTask.TaskLang.UnSupportLanguage;
+        }
+
+        String lang = value.toLowerCase();
+	    if("java".compareTo(lang) == 0) {
+	        return AbstractTask.TaskLang.Java;
+        } else if("python".compareTo(lang) == 0) {
+	        return AbstractTask.TaskLang.Python;
+        } else {
+	        System.err.println("unsupport programming language.");
+        }
+        return AbstractTask.TaskLang.UnSupportLanguage;
+	}
+
+
 	public void saveToFile(String fileName) {
 		try {
 			FileWriter out = new FileWriter(fileName);
@@ -150,10 +177,13 @@ public class TaskListXmlParser {
 			Element taskGroup = it1.next();
 			for(Iterator<Element> it2 = taskGroup.elementIterator(); it2.hasNext();) {
 				Element task = it2.next();
-				TaskInfo info = new TaskInfo(taskGroup.attributeValue("name"),
-						task.attributeValue("name"), task.attributeValue("target"),
-						task.attributeValue("description"));
-				taskInfos.add(info);
+				TaskInfo info = new TaskInfo();
+				info.setLang(root.attributeValue("lang"));
+				info.setGroupName(taskGroup.attributeValue("name"));
+				info.setTaskName(task.attributeValue("name"));
+				info.setTarget(task.attributeValue("target"));
+				info.setDescription("description");
+			    taskInfos.add(info);
 			}
 		}
 		return taskInfos;

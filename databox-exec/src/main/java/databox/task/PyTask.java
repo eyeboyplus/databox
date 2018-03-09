@@ -9,7 +9,7 @@ public class PyTask extends AbstractTask {
 
 	@Override
 	public boolean execute() {
-		String cmd = "python " + SOURCE_ROOT_PATH + "/" + info.getTaskGroupName() + "/" + info.getTarget();
+		String cmd = "python " + SOURCE_ROOT_PATH + "/" + info.getGroupName() + "/" + info.getTarget();
 		try {
 			process = Runtime.getRuntime().exec(cmd);
 		} catch (IOException e) {

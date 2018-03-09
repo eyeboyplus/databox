@@ -14,8 +14,8 @@ public class JTask extends AbstractTask {
 		String fileSeparator = "/";
 		String pathSeparator = System.getProperty("path.separator");
 		String cmd = "java -classpath " 
-		+ TaskConfig.taskRootPath + fileSeparator + info.getTaskGroupName() + fileSeparator + pathSeparator
-		+ TaskConfig.taskRootPath + fileSeparator + info.getTaskGroupName() + fileSeparator + "*" + pathSeparator 
+		+ TaskConfig.taskRootPath + fileSeparator + info.getGroupName() + fileSeparator + pathSeparator
+		+ TaskConfig.taskRootPath + fileSeparator + info.getGroupName() + fileSeparator + "*" + pathSeparator
 		+ TaskConfig.taskLibPath + fileSeparator + "*" + pathSeparator 
 		+ " " + FileHelper.getFileName(info.getTarget());
 		System.out.println(cmd);

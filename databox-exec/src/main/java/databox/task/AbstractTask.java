@@ -4,7 +4,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public abstract class AbstractTask {
-	protected static final String SOURCE_ROOT_PATH = "D:/Class/task";	
+	public enum TaskLang {
+	    Java, Python, UnSupportLanguage
+    };
+
+
+    protected static final String SOURCE_ROOT_PATH = "D:/Class/task";
 	protected Process process = null;
 	protected TaskInfo info;
 	

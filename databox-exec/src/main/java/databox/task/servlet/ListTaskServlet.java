@@ -16,6 +16,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import databox.task.TaskInfo;
+import databox.task.TaskListMongoDB;
 import databox.task.TaskListXmlParser;
 
 public class ListTaskServlet extends HttpServlet {
@@ -46,14 +47,22 @@ public class ListTaskServlet extends HttpServlet {
 		 * @throws IOException if an error occurred
 		 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		TaskListXmlParser parser = (TaskListXmlParser) this.getServletContext().getAttribute("tasklist");
-		List<String> taskGroupNames = parser.getAllTaskGroupName();
-		Iterator<String> it = taskGroupNames.iterator();
-		PrintWriter out = response.getWriter();
+//		TaskListXmlParser parser = (TaskListXmlParser) this.getServletContext().getAttribute("tasklist");
+
+        //TODO 导出配置文件
+        String ip = "localhost";
+        int port = 27017;
+        String dbname = "tasklist";
+        String collectioName = "task";
+        TaskListMongoDB taskListMongoDB = new TaskListMongoDB(ip, port, dbname, collectioName);
+
+        PrintWriter out = response.getWriter();
 		
 		Gson gson = new Gson();
 
-		out.print(gson.toJson(parser.getAllTaskInfo()));
+//		out.print(gson.toJson(parser.getAllTaskInfo()));
+        List<TaskInfo> infos = taskListMongoDB.getAllTaskInfo();
+        out.print(gson.toJson(infos));
 		
 //		JsonArray array = new JsonArray();
 //		
@@ -71,7 +80,7 @@ public class ListTaskServlet extends HttpServlet {
 //				iObj.addProperty("description", info.getDescription());
 //				//debug
 //				iObj.addProperty("target", info.getTarget());
-//				iObj.addProperty("taskgroupname", info.getTaskGroupName());
+//				iObj.addProperty("taskgroupname", info.getGroupName());
 //				tasks.add(iObj);
 //			}
 //			obj.add("tasklist", tasks);
