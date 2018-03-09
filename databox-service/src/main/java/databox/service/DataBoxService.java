@@ -35,7 +35,7 @@ public class DataBoxService implements IDataBoxService {
 	
 	public DataBoxService() {
 //		InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox-service.properties");
-        InputStream in = DataBoxService.class.getClassLoader().getResourceAsStream("databox-service.properties");
+        InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox-service.properties");
         Properties properties = PropertiesFactory.getProperties(in);
 		String ip = properties.getProperty(DataBox.KEY_DATA_DB_IP, DataBox.DEFAULT_DATA_DB_IP);
 		int port = Integer.valueOf(properties.getProperty(DataBox.KEY_DATA_DB_PORT, DataBox.DEFAULT_DATA_DB_PORT));

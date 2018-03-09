@@ -18,7 +18,7 @@ public class DataBoxService implements IDataBoxService {
 	private DataBoxHttpClient httpClient = null;
 	
 	public DataBoxService() {
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox/service/databox-service.properties");
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream("databox-service.properties");
 		Properties properties = PropertiesFactory.getProperties(in);
 		String ip = properties.getProperty("sample.server.ip");
 		int port = Integer.valueOf(properties.getProperty("sample.server.port"));
