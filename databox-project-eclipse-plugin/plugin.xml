@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="Databox"
+            id="Databox">
+      </category>
+<!--      <wizard
+            name="Multi-page Editor file"
+            icon="icons/sample.png"
+            category="ExampleWizard"
+            class="examplewizard.wizards.SampleNewWizard"
+            id="examplewizard.wizards.SampleNewWizard">
+      </wizard>
+      -->
+      
+      <wizard
+            category="Databox"
+            class="cn.edu.fudan.wizard.DataboxNewWizard"
+            icon="icons/sample.png"
+            id="cn.edu.fudan.wizard.DataboxNewWizard"
+            name="Databox project"
+            project="true">
+      </wizard>
+   </extension>
+   
+
+</plugin>

@@ -1,0 +1,15 @@
+<tasklist>
+    <taskgroup name="group4">
+        <task name="Correlation" target="Correlation.class" description="this is a java test.">
+            <idea></idea>
+            <services>
+                <service name=""></service>
+            </services>
+            <database>
+                <table name="">
+                    <field name=""></field>
+                </table>
+            </database>
+        </task>
+    </taskgroup>
+</tasklist>
